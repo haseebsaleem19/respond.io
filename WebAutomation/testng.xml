@@ -1,0 +1,34 @@
+<suite name="Automation Testing">
+    <!--
+    This suite is designed for automation testing of the web application.
+    It includes test cases for the login functionality and workspace management.
+
+    Listeners:
+    - ExtentReportListener: Generates detailed test reports.
+
+    Test Cases:
+    - WebAutomation Flow:
+      - LoginTests: Includes tests for valid and invalid login scenarios.
+      - WorkspaceTests: Includes tests for adding a new workspace.
+    -->
+    <listeners>
+        <!-- Extent Report Listener for generating test reports -->
+        <listener class-name="extentReport.ExtentReportListener"/>
+    </listeners>
+    <!-- Test Case: WebAutomation Flow -->
+    <test name="WebAutomation Flow">
+        <classes>
+            <class name="LoginTests">
+                <methods>
+                    <include name="validLoginTest"/>
+                    <include name="invalidLoginTest"/>
+                </methods>
+            </class>
+            <class name="WorkspaceTests">
+                <methods>
+                    <include name="addWorkspace"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
